@@ -3,7 +3,6 @@ body {
     background: linear-gradient(to right,#673ab7 ,black ,#26c6da);
 }
 
-/* Header Section */
 header {
     width: 100%;
     color:#E6E6FA;
@@ -26,7 +25,7 @@ header {
     margin: 1rem;
 }
 .nav-container:hover {
-    transform: translateY(-10px);
+    transform: translateY(-5px);
 }
 
 .nav-links a {
@@ -42,6 +41,9 @@ header {
     background-color: teal;
 }
 
+main{
+    margin: 20px 20px 20px 20px;
+}
 section {
     max-width: 100%;
     margin-top: 40px;
@@ -55,7 +57,8 @@ section {
 }
 
 .event-details:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
+    transition: transform 0.3s ease;
 }
 
 .speakers {
@@ -64,10 +67,12 @@ section {
 }
 .speakers:hover {
     transform: scale(1.02);
+    transition: transform 0.3s ease;
 }
 
 .guest figure:hover {
     transform: translateY(-10px) scale(1.05);
+    transition: transform 0.3s ease;
 }
 
 figure img {
@@ -85,43 +90,55 @@ figcaption {
 }
 figure :hover{
     background:linear-gradient(90deg,#e1bee7 , mediumpurple, lightgreen);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
 }
-
-
 
 .gallery {
     background: linear-gradient(90deg, #1a237e, #e1bee7, #69f0ae);
-    padding: 1em 0 0 0;
-}
-.gallery:hover {
-    transform: scale(1.02);
+    padding: 1em 0 5em 0;
+    overflow: hidden;
+    transition: transform 0.3s ease;
 }
 
 .gallery-item {
     width: 300px;
     float: left;
-    padding: 1em 1em 0 5em;
+    margin:2em 0;
+    position: relative;
+    transition: transform 0.3s ease, z-index 0.3s ease;
 }
-
-.gallery::after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
 .gallery-item img, .gallery-item video {
-    width: 100%;
+     width: 100%;
+ }
+.gallery-item:nth-child(2) {
+    top: 0;
+    left: 30%;
+    margin: 1rem 0 0 10rem;
+    z-index: 5;
 }
-.gallery-item figcaption{
-    padding: 2em;
-    margin: 0;
-    border: 2px solid purple;
-    text-align: center;
+.gallery-item:nth-child(3) {
+   padding-top: 10rem;
+    margin-left: -5rem;
+    z-index: 4;
+}
+.gallery-item:nth-child(4) {
+    padding-top: 10rem;
+    margin-left: 10rem;
+    z-index: 3;
+}
+.gallery-item video{
+    z-index: 2;
+    padding-top: 0;
+    margin: 20rem 0 0 -65rem;
+}
+.gallery-item:hover {
+    transform: translateY(-10px);
+    z-index: 6;
+}
+.gallery:hover {
+    transform: scale(1.02);
 }
 
-.gallery-item:hover {
-    transform: scale(1.05);
-}
 .schedule {
     background: linear-gradient(90deg,#1a237e, #69f0ae, #673ab7);
     text-align: left;
@@ -137,20 +154,25 @@ figure :hover{
 }
 
 .schedule ul li {
-    margin: 10px 0;
     padding: 1em;
-    margin-right: 1em;
+    margin: 10px 1em 10px 0;
+    transition: transform 0.3s ease;
+}
+#schedule:hover {
+    transform: scale(1.02);
     transition: transform 0.3s ease;
 }
 .schedule ul li:hover {
-    transform: translateY(-10px) scale(1.05);
+    transform: translateY(-10px) scale(1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+    color: #FFC1CC;
 }
 .schedule ul li:nth-child(even) {
-    background-color: rgba(100, 216, 400, 0.3);
+    background-color: rgba(100, 216, 255, 0.3);
 }
 
 .schedule ul li:nth-child(odd) {
-    background-color: rgba(524,100,524,0.3);
+    background-color: rgba(255,100,255,0.3);
 }
 
 
@@ -161,6 +183,7 @@ figure :hover{
 }
 .testimonials:hover {
     transform: scale(1.02);
+    transition: transform 0.3s ease;
 }
 
 blockquote cite {
@@ -176,6 +199,7 @@ blockquote {
 }
 .testimonials blockquote:hover {
     transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
 }
 
 .location {
@@ -185,14 +209,19 @@ blockquote {
 }
 .location:hover {
     transform: scale(1.02);
+    transition: transform 0.3s ease;
 }
 
 footer {
-    color: #E6E6FA;
+    color: white;
     text-align: left;
     padding: 20px 0;
     margin-left: 10px;
 }
+footer a {
+    color: #FFC1CC;
+ }
+
 
 
 
